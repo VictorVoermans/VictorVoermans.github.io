@@ -19,12 +19,16 @@
 				text-decoration: underline;
 			}
 			
-			ul {
-				margin-bottom: 4em;
-			}
-			
 			li {
 				line-height: 2;
+			}
+			
+			.li1 {
+				list-style-type: none;
+			}
+			
+			.li2 {
+				list-style-type: disc;
 			}
 			
 			.cun {
@@ -41,6 +45,10 @@
 				font-family: Assurbanipal;
 				src: url(Assurbanipal.ttf);
 			}
+			
+			#me {
+				margin-top: 4em;
+			}
 		</style>
 	</head>
 	
@@ -50,13 +58,27 @@
 		<h1>Assyriology</h1>
 		
 		<ul>
-			<li><a href="verbs.html">Paradigm of Akkadian Strong Verbs</a></li>
-			<li><a href="converter.html">Converter for Transliterated or Normalized Akkadian</a></li>
-			<li><a href="signs.pdf">Neo-Assyrian Cuneiform Sign List from Richard Caplice’s <i>Introduction to Akkadian</i></a></li>
-			<li><a href="supermarket.html">What Cuneiform Could Look Like If It Were Still Used Today</a></li>
+			<li class="li1">Utility</li>
+			
+			<ul>
+				<li class="li2"><a href="converter.html">Converter for Transliterated or Normalized Akkadian</a></li>
+			</ul>
+			
+			<li class="li1">Reference</li>
+			
+			<ul>
+				<li class="li2"><a href="verbs.html">Paradigm of Akkadian Strong Verbs</a></li>
+				<li class="li2"><a href="signs.pdf">Neo-Assyrian Cuneiform Sign List from Richard Caplice’s <i>Introduction to Akkadian</i></a></li>
+			</ul>
+			
+			<li class="li1">Other</li>
+			
+			<ul>
+				<li class="li2"><a href="supermarket.html">What Cuneiform Could Look Like If It Were Still Used Today</a></li>
+			</ul>
 		</ul>
 		
-		<p>Victor Voermans 2021</p>
+		<p id="me">Victor Voermans 2021</p>
 		
 		<p class="cun">𒌓 𒈬 𒌝 𒄿 𒈾 𒀜 𒁲 𒅔</p>
 	</body>
