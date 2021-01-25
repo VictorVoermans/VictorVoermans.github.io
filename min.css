@@ -15,6 +15,7 @@ p {
 a {
 	color: black;
 	text-decoration: none;
+	user-select: none;
 }
 
 a:hover {
@@ -23,4 +24,5 @@ a:hover {
 
 img {
 	margin: 0 5vw 5vw 0;
+	vertical-align: middle;
 }
