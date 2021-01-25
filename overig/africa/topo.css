@@ -1,0 +1,113 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+
+
+/* Divisions of the screen */
+
+html, body, .sidebar, .map, .preload {
+	height: 100%;
+}
+
+.sidebar, .map, .test {
+	display: block;
+	float: left;
+}
+
+.sidebar, .test {
+	width: 25%;
+}
+
+.map {
+	width: 50%;
+}
+
+
+
+/* Map */
+
+svg {
+	display: block;
+	height: 100vh;
+	margin: auto;
+}
+
+.country {
+	fill: #dbdbdb;
+	fill-opacity: 1;
+	stroke: white; 
+	stroke-width: .5;
+	stroke-linejoin: round;
+}
+
+.island {
+	fill: white;
+	fill-opacity: 0;
+	stroke: #dbdbdb;
+}
+
+.dashed {
+	fill: none;
+	stroke: #dbdbdb;
+	stroke-width: .5;
+	stroke-dasharray: 0.52899997, 1.05799995;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+}
+
+.capital {
+	visibility: hidden;
+}
+
+
+
+/* HUD */
+
+.preload {
+	display: none;
+}
+
+.box {
+	padding: 1em 3em;
+}
+
+h3 {
+	font-weight: 800;
+	font-size: 75%;
+	margin: 0;
+}
+
+h1 {
+	font-style: italic;
+	font-size: 300%;
+	font-family: 'Libre Franklin', sans-serif;
+	margin: .25em 0;
+}
+
+.flag {
+	height: 8em;
+	visibility: hidden;
+}
+
+.info {
+	visibility: hidden;
+	font-size: 75%;
+	padding: 1em;
+	margin: 3em;
+	background-color: #f5f5f5;
+	border: 1px solid #989898;
+}
+
+.bottom {
+	position: fixed;
+	bottom: 0;
+	width: inherit;
+}
+
+
+
+/* TEST */
+
