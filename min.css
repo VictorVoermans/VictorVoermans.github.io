@@ -5,11 +5,8 @@ body {
 }
 
 p {
-	line-height: .5em;
-}
-
-.text {
 	line-height: 1.5em;
+	margin-bottom: -1em;
 }
 
 a {
