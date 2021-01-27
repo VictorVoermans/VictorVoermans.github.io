@@ -15,7 +15,11 @@ a {
 	user-select: none;
 }
 
-a:hover {
+#overig {
+	color: white;
+}
+
+a:hover, #overig:hover {
 	color: hotpink;
 }
 
