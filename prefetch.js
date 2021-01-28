@@ -10,8 +10,8 @@ function prefetch() {
 var images = [
 	"a/supermarket/01.png",
 	"a/supermarket/02.png",
-	"a/supermarket/03.png",
-	/*"",
+	"a/supermarket/03.png"/*,
+	"",
 	"",
 	"",
 	"",
