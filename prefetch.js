@@ -1,10 +1,13 @@
 function prefetch() {
-	for (i = 0; i < images.length; i++) {
-		var image = document.createElement("img");
-		image.src = images[i];
-		image.style.width = "1px";
-		document.getElementById("prefetch").appendChild(image);
+	if (document.getElementById("prefetch_check").complete == false;){
+		for (i = 0; i < images.length; i++) {
+			var image = document.createElement("img");
+			image.src = images[i];
+			image.style.width = "1px";
+			document.getElementById("prefetch").appendChild(image);
+		}
 	}
+	document.getElementById("prefetch_check").src = "check.jpg";
 }
 
 var images = [
