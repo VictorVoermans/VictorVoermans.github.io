@@ -1,12 +1,9 @@
 function prefetch() {
-	if (document.getElementById("img_0").complete == false) {
-		for (i = 0; i < images.length; i++) {
-			var image = document.createElement("img");
-			image.src = images[i];
-			image.style.width = "1px";
-			image.id = "img_" + i;
-			document.getElementById("prefetch").appendChild(image);
-		}
+	for (i = 0; i < images.length; i++) {
+		var image = document.createElement("img");
+		image.src = images[i];
+		image.style.width = "1px";
+		document.getElementById("prefetch").appendChild(image);
 	}
 }
 
