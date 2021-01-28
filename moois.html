@@ -3,12 +3,30 @@
 	<head>
 		<title>moois</title>
 		<link rel="stylesheet" href="min.css">
+		<script src="prefetch.js"></script>
+		<script>
+			var images = [
+				"moois/bill.jpg",
+				"moois/izutsu.jpg",
+				"moois/japanese_verse.jpg",
+				"moois/nagai.jpg",
+				"moois/paper_castles.jpg",
+				"moois/quakefish.jpg",
+				"moois/vewn.jpg",
+				"moois/vreemdeling.jpg",
+				"moois/wind.jpg",
+				"moois/zeen.jpg",
+				"moois/jonni.png"
+			];
+		</script>
 	</head>
 	
-	<body>
+	<body onload="prefetch()">
 		<p><a href="moois/boeken.html">boeken</a></p>
 		<p><a href="moois/muziek.html">muziek</a></p>
 		<p><a href="moois/youtube.html">youtube</a></p>
 		<p><a href="moois/kunst.html">kunst</a></p>
+		
+		<div id="prefetch" style="display:none;"></div>
 	</body>
 </html>
