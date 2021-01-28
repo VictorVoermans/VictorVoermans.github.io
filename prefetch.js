@@ -1,13 +1,13 @@
 function prefetch() {
-	if (document.getElementById("prefetch_check").complete == false;){
+	if (document.getElementById("img_0").complete == false) {
 		for (i = 0; i < images.length; i++) {
 			var image = document.createElement("img");
 			image.src = images[i];
 			image.style.width = "1px";
+			image.id = "img_" + i;
 			document.getElementById("prefetch").appendChild(image);
 		}
 	}
-	document.getElementById("prefetch_check").src = "check.jpg";
 }
 
 var images = [
