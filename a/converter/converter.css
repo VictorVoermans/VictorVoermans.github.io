@@ -1,0 +1,71 @@
+body {
+	font-family: sans-serif;
+	margin: 1em;
+}
+
+sub, sup {
+	font-size: 60%;
+}
+
+/* input */
+
+textarea {
+	padding: 1em;
+	border: 1px solid grey;
+}
+
+/* output */
+
+#output {
+	line-height: 1.15;
+	font-family: serif;
+	padding: 1em 2em;
+}
+
+/* headers */
+
+h2, #leiden {
+	text-align: center;
+}
+
+h4 {
+	margin-top: 2em;
+	padding-bottom: .25em;
+	border-bottom: 1px solid black;
+}
+
+/* table */
+
+table, th, td {
+	border-collapse: collapse;
+}
+
+tr {
+	border: 1px solid grey;
+	width: 4em;
+}
+
+th {
+	padding: .25em;
+	font-size: 85%;
+}
+
+td {
+	text-align: right;
+}
+
+.input {
+	font-family: monospace;
+	font-size: 120%;
+	text-align: left;
+}
+
+td, .input {
+	padding: .125em 1em;
+}
+
+/* button */
+
+button {
+	margin: .5em 0;
+}

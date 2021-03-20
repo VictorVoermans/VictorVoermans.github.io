@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Akkadian Converter</title>
+		<script src="converter.js"></script>
+		<link rel="stylesheet" href="converter.css">
+	</head>
+	
+	<body>
+		<h2 style="margin-bottom:0;">Converter for transliterated or normalized Akkadian</h2>
+		
+		<h4 style="margin-top:0;">Input</h4>
+
+		<textarea id="input" value="" rows="10" cols="64">{d}asz+szur LUGAL DIJIR-MESZ reme2-nu-u {d}AMAR-UTU sza2 nu-ul-la-a-ti ik-kib-szu-un;_aszszur szar ilaani reemeenuuu _marduk sza nullaaati ikkibszun</textarea>
+
+		<br><button id="button" onclick="convert()">Convert</button><br>
+		<h4>Output</h4>
+
+		<p id="output"></p>
+		<h4>Key</h4>
+
+		<table>
+			<tr>
+				<th colspan="2">Akkadian</th>
+			</tr>
+			<tr>
+				<td class="input">sz</td>
+				<td><i>š</i></td>
+			</tr>
+			<tr>
+				<td class="input">s,</td>
+				<td><i>ṣ</i></td>
+			</tr>
+			<tr>
+				<td class="input">t,</td>
+				<td><i>ṭ</i></td>
+			</tr>
+			<tr>
+				<td class="input">h</td>
+				<td><i>ḫ</i></td>
+			</tr>
+			<tr>
+				<td class="input">'</td>
+				<td><i>’</i></td>
+			</tr>
+			<tr>
+				<td class="input">aa</td>
+				<td><i>ā</i></td>
+			</tr>
+			<tr>
+				<td class="input">aaa</td>
+				<td><i>â</i></td>
+			</tr>
+			<tr>
+				<th colspan="2">Sumerian</th>
+			</tr>
+			<tr>
+				<td class="input">SZ</td>
+				<td>š</td>
+			</tr>
+			<tr>
+				<td class="input">J</td>
+				<td>ĝ</td>
+			</tr>
+			<tr>
+				<td class="input">H</td>
+				<td>ḫ</td>
+			</tr>
+			<tr>
+				<th colspan="2">Other</th>
+			</tr>
+			<tr>
+				<td class="input">_a</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td class="input">{d}</td>
+				<td><sup>d</sup></td>
+			</tr>
+			<tr>
+				<td class="input">2</td>
+				<td><sub>2</sub></td>
+			</tr>
+			<tr>
+				<td class="input">|30|</td>
+				<td>30</td>
+			</tr>
+			<!--<tr>
+				<td class="input">[[x]]</td>
+				<td>⸢<i>x</i>⸣</td>
+			</tr>-->
+			<tr>
+				<td class="input">;</td>
+				<td>line break</td>
+			</tr>
+		</table>
+		
+		<p id="leiden">Made in Leiden</p>
+	</body>
+</html>
+		
+<!-- (c) Victor Voermans 2020 -->
