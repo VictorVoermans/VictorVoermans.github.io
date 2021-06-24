@@ -5,24 +5,34 @@ body {
 	background-image: url('wolken.jpg');
 	background-attachment: fixed;
 	
-	margin: 10vh 10vw 0;
+	margin: 10vh 10vw;
+}
+
+/* typography */
+
+p, a {
+	color: white;
 }
 
 p {
-	color: white;
 	line-height: 1.5;
 	
 	margin: 0;
 }
 
 a {
-	color: white;
 	line-height: 2;
 	text-decoration: none;
 	
 	user-select: none;
 	outline: none;
 }
+
+.sneaky {
+	color: rgba(255,255,255,0);
+}
+
+/* hover */
 
 a:hover, .sneaky:hover {
 	color: rgba(255,255,255,0.5);
@@ -32,9 +42,7 @@ a > img:hover {
 	border: 1.5vw solid rgba(255,255,255,0.5);
 }
 
-.sneaky {
-	color: rgba(255,255,255,0);
-}
+/* images */
 
 img {
 	border: 1.5vw solid white;
@@ -44,6 +52,8 @@ img {
 	float: left;
 	clear: left; /* dit en hierboven is om te zorgen dat de <a> niet een width van 100% heeft door de block */
 }
+
+/* on small screens */
 
 @media screen and (max-width: 800px){
 	body {
