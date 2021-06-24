@@ -1,0 +1,45 @@
+body {
+	font-family: sans-serif;
+	font-size: 75%;
+	margin: 3vw 0 0 6vw;
+	background-image: url('wolken.jpg');
+	background-attachment: fixed;
+}
+
+p {
+	line-height: 1.5;
+	margin-bottom: -1em;
+	color: white;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	user-select: none;
+	outline: none;
+	line-height: 2;
+}
+
+.sneaky {
+	color: rgba(255,255,255,0);
+}
+
+a:hover, .sneaky:hover {
+	color: rgba(255,255,255,0.5);
+}
+
+img {
+	margin: 0 5vw 5vw 0;
+	vertical-align: middle;
+	border: 1.5vw solid white;
+}
+
+a > img:hover {
+	border: 1.5vw solid rgba(255,255,255,0.5);
+}
+
+@media screen and (max-width: 800px){
+	img {
+		border: 5vw solid white;
+	}
+}

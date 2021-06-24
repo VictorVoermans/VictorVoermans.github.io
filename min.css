@@ -1,31 +1,66 @@
 body {
 	font-family: sans-serif;
 	font-size: 75%;
-	margin: 3vw 0 0 6vw;
+	
+	background-image: url('wolken.jpg');
+	background-attachment: fixed;
+	
+	margin: 10vh 10vw 0;
 }
 
 p {
+	color: white;
 	line-height: 1.5;
-	margin-bottom: -1em;
+	
+	margin: 0;
 }
 
 a {
-	color: black;
+	color: white;
+	line-height: 2;
 	text-decoration: none;
+	
 	user-select: none;
 	outline: none;
-	line-height: 2;
+}
+
+a:hover, .sneaky:hover {
+	color: rgba(255,255,255,0.5);
+}
+
+a > img:hover {
+	border: 1.5vw solid rgba(255,255,255,0.5);
 }
 
 .sneaky {
-	color: white;
-}
-
-a:hover, #overig:hover {
-	color: hotpink;
+	color: rgba(255,255,255,0);
 }
 
 img {
-	margin: 0 5vw 5vw 0;
-	vertical-align: middle;
+	border: 1.5vw solid white;
+	margin: 0 0 5vw 0;
+	height: 60vh;
+	display: block;
+	float: left;
+	clear: left; /* dit en hierboven is om te zorgen dat de <a> niet een width van 100% heeft door de block */
+}
+
+@media screen and (max-width: 800px){
+	body {
+		margin: 10vw;
+	}
+	
+	a {
+		font-size: 140%;
+	}
+	
+	img {
+		height: auto;
+		width: 75vw;
+		border: 2.5vw solid white;
+	}
+
+	a > img:hover {
+		border: 2.5vw solid rgba(255,255,255,0.5);
+	}
 }
