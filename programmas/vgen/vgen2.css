@@ -54,4 +54,5 @@ a:hover {
 .word:hover {
 	background-color: #DECCE0;
 	cursor: pointer;
+	user-select: none;
 }
