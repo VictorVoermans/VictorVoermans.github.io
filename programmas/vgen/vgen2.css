@@ -51,8 +51,11 @@ a:hover {
 	text-align: justify;
 }
 
+.word {
+	user-select: none;
+}
+
 .word:hover {
 	background-color: #DECCE0;
 	cursor: pointer;
-	user-select: none;
 }
