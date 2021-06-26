@@ -15,7 +15,7 @@ function generateOutput(){
 	
 	for (j = 0; j < amount; j++){ 
 		generateWord();
-		output = word + "<br>" + output;
+		output = "<span class=\"word\" onclick=\"addWord('" + word + "')\">" + word + "</span>" + "<br>" + output;
 		word = "";
 	}
 	
@@ -103,4 +103,14 @@ function chooseCoda(){
 function erase(){
 	output = ""
 	document.getElementById("output").innerHTML = "";
+}
+
+function addWord(selectedWord){
+	var saved = document.getElementById("saveArea");
+	
+	if (saved.value == ""){
+		saved.value = selectedWord;
+	} else {		
+		saved.value = saved.value + "\n" + selectedWord;
+	}
 }
