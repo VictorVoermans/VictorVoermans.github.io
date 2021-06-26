@@ -108,9 +108,5 @@ function erase(){
 function addWord(selectedWord){
 	var saved = document.getElementById("saveArea");
 	
-	if (saved.value == ""){
-		saved.value = selectedWord;
-	} else {		
-		saved.value = saved.value + "\n" + selectedWord;
-	}
+	saved.value = selectedWord + "\n" + saved.value;
 }
