@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>vGen 2</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="vgen2.css">
+		<script src="vgen2.js"></script>
+	</head>
+	
+	<body>
+		<div class="header">
+			<h1>vGen 2</h1>
+			<p style="margin-top: .5em;">other generators: <a href="https://www.zompist.com/gen.html" target="_blank">Zompist</a>, <a href="http://akana.conlang.org/tools/awkwords/" target="_blank">Awkwords</a>, <a href="https://collinbrennan.github.io/GenGo/index.html" target="_blank">GenGo</a></p>
+		</div>
+		
+		<div class="block">
+			<h3>Settings</h3>
+			
+			<p>Onset</p>
+			<input type="text" id="onset" name="onset" value="b d g z m n l sh">
+
+			<p>Nucleus</p>
+			<input type="text" id="nucleus" name="nucleus" value="a i u e">
+
+			<p>Coda</p>
+			<input type="text" id="coda" name="coda" value="m n l sh">
+
+			<p>Syllable separator</p>
+			<input type="text" id="separator" name="separator" value="-">
+
+			<p>Minimum length</p>
+			<input type="number" id="minimum" name="minimum" value="1" min="1">
+			
+			<p>Maximum length</p>
+			<input type="number" id="maximum" name="maximum" value="3" min="1">
+		</div>
+		
+		<div class="block">
+			<h3>&nbsp;</h3>
+			
+			<p>Word amount</p>
+			<input type="number" id="amount" name="amount" value="1" min="1">
+			
+			<br><br><label>Clear each time </label><input type="checkbox" id="clear">
+			
+			<p>Frequency of onset</p>
+			<input type="radio" name="onset" value="o100" id="o100"><label>Always</label><br>
+			<input type="radio" name="onset" value="o75" id="o75" checked=""><label>Frequent</label><br>
+			<input type="radio" name="onset" value="o50" id="o50"><label>Common</label><br>
+			<input type="radio" name="onset" value="o25" id="o25"><label>Rare</label><br>
+			<input type="radio" name="onset" value="o0" id="o0"><label>Never</label><br>
+
+			<p>Frequency of coda</p>
+			<input type="radio" name="coda" value="c100" id="c100"><label>Always</label><br>
+			<input type="radio" name="coda" value="c75" id="c75"><label>Frequent</label><br>
+			<input type="radio" name="coda" value="c50" id="c50"><label>Common</label><br>
+			<input type="radio" name="coda" value="c25" id="c25" checked=""><label>Rare</label><br>
+			<input type="radio" name="coda" value="c0" id="c0"><label>Never</label><br>
+			
+			<div class="buttons">
+				<button onclick="generateOutput()">Generate</button>
+				<button onclick="erase()">Clear</button>
+			</div>
+		</div>
+		
+		<div class="block">
+			<h3>Save the ones you like</h3>
+			<textarea cols="48" rows="12"></textarea>
+		</div>
+		
+		<div class="block output">
+			<h3>Output</h3>
+			<p id="output"></p>
+		</div>
+	</body>
+</html>

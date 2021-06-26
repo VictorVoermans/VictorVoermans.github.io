@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+	overflow-y: scroll;
+}
+
+/* layout */
+
+.header {
+	color: white;
+	text-align: center;
+	background-image: url('../../wolken.jpg');
+	padding: 1em 0 .5em;
+}
+
+h1 {
+	margin: 0;
+}
+
+.footer {
+	text-align: center;
+	border-top: 1px solid black;
+	display: fixed;
+	bottom: 0;
+}
+
+.block {
+	margin: 0 2em;
+	float: left;
+	height: 100%;
+}
+
+.buttons {
+	margin: 1.5em 0;
+}
+
+.output {
+	width: 40%;
+}
+
+/* typography */
+
+a {
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#output {
+	text-align: justify;
+}
