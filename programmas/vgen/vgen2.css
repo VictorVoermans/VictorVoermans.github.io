@@ -8,7 +8,7 @@ body {
 .header {
 	color: white;
 	text-align: center;
-	background-image: url('wolken.jpg');
+	background-image: url('../../wolken.jpg');
 	padding: 1em 0 .5em;
 }
 
