@@ -1,0 +1,53 @@
+html {
+	height: 100%;
+}
+
+body {
+	text-align: center;
+	min-height: 100%;
+}
+
+/* */
+
+@font-face {
+  font-family: ChineseFont;
+  src: url(kaiu.ttf);
+}
+
+.font {
+  font-family: ChineseFont;
+}
+
+/* */
+
+#lessons {
+	margin: 2em;
+}
+
+#character {
+	font-size: 1800%;
+	margin: .25em;
+}
+
+#input {
+	font-size: 300%;
+	border: 1px solid black;
+	padding: .25em .5em;
+	letter-spacing: .25em;
+	width: 12em;
+	text-align: center;
+}
+
+/* */
+
+button {
+	background-color: transparent;
+	border: 1px solid black;
+	font-family: ChineseFont;
+	padding: .25em 1em;
+}
+
+button:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
