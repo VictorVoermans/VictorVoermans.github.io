@@ -110,3 +110,8 @@ function addWord(selectedWord){
 	
 	saved.value = selectedWord + "\n" + saved.value;
 }
+
+function copyToClipboard(id){
+	document.getElementById(id).select();
+	document.execCommand('copy');
+}
