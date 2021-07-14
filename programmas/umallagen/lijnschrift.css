@@ -1,0 +1,37 @@
+html, body, .left,\ .right {
+	margin: 0;
+	font-family: sans-serif;
+}
+
+.left, .right {
+	display: block;
+	float: left;
+}
+
+.left {
+	width: 35%;
+}
+
+.right {
+	width: 65%;
+}
+
+.inside {
+	margin: 4vh;
+}
+
+p {
+	font-size: 75%;
+}
+
+.header {
+	color: white;
+	font-family: serif;
+	text-align: center;
+	background-image: url('../../wolken.jpg');
+	padding: .5em 0;
+}
+
+/*#hor{
+	margin-bottom: .5em;
+}*/
