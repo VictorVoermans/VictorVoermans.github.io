@@ -1,10 +1,11 @@
+var caps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "."];
 var codes = ["111", "112", "113", "121", "122", "123", "131", "132", "133", "211", "212", "213", "221", "222", "223", "231", "232", "233", "311", "312", "313", "321", "322", "323", "331", "332", "333"];
 
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 
-var debug = document.getElementById("debug"); // dit kan uiteindelijk weg
+var debug = document.getElementById("debug");
 
 var thickness; // this is the width of the band expressed in number of underlying checkerboard squares
 var input; // this is the text the user wants to have written out
@@ -18,8 +19,23 @@ var checkerY = []; // an array of the y-coordinates of the checker squares
 var cumulativeCodes = [];
 
 function generate(){
+	prepareInput();
 	prepareCanvas();
 	draw();
+}
+
+function prepareInput(){
+	input = document.getElementById("input").value;
+	
+	for (i = 0; i < caps.length; i++){
+		input = input.replaceAll(caps[i], letters[i]);
+	} // uppercase letters become lowercase
+	
+	for (i = 0; i < input.length; i++){
+		if (letters.indexOf(input[i]) == -1){
+			input = input.replaceAll(input[i], "");
+		}
+	}
 }
 
 function prepareCanvas(){
@@ -33,8 +49,6 @@ function getThickness(){
 }
 
 function convertInputToCode(){
-	input = document.getElementById("input").value;			// "ta"
-	
 	for (i = 0; i < letters.length; i++){
 		input = input.replaceAll(letters[i], codes[i]);		// "312111"
 	}
