@@ -22,6 +22,7 @@ function generate(){
 	prepareInput();
 	prepareCanvas();
 	draw();
+	applyScale();
 }
 
 function prepareInput(){
@@ -162,4 +163,8 @@ function eraseHorizontalLines(){
 		context.fillRect(checkerX[cumulativeCodes[i]-1],checkerY[cumulativeCodes[i]-1]+1,1,1); // the line above
 		context.fillRect(checkerX[cumulativeCodes[i]-1],checkerY[cumulativeCodes[i]-1]-1,1,1); // the line below
 	}
+}
+
+function applyScale(){
+	canvas.style.transform = "scale(2) translate(" + canvasWidth/4 + "px," + canvasHeight/4 + "px)";
 }

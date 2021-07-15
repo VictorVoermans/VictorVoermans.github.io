@@ -14,17 +14,13 @@
 		<div class="left">
 			<div class="inside">
 				<h3>Input</h3>
-				<p>Only letters and full stops are written in the script. Thus, the example below becomes "shallicomparetheetoasummersday". You can add full stops between messages if you want to.</p>
+				<p>Only letters and full stops appear in the script. Thus, the example input is reduced to "shallicomparetheetoasummersday". You can add full stops between messages if you want to.</p>
 				<textarea oninput="generate()" name="input" id="input" cols="40" rows="10">Shall I compare thee to a summer's day?</textarea>
-				<h3>Thickness of band</h3>
+				
+				<h3>Thickness</h3>
 				<p>Only even numbers produce nice results.</p>
 				<input oninput="generate()" type="number" step="2" min="2" name="thickness" id="thickness" value="6">
-				<!--<p>Writing direction</p>
-				<input type="radio" id="hor" name="dir" checked="">
-				<label>horizontal</label>
-				<br>
-				<input type="radio" id="vert" name="dir">
-				<label>vertical</label>-->
+				
 				<h3>How to save</h3>
 				<p>You can save the image by right-clicking on it. After that, you can edit it a program like Photoshop or Inkscape.</p>
 				<p id="debug"></p>
@@ -38,6 +34,5 @@
 				<script src="gen.js"></script>
 			</div>
 		</div>
-		
 	</body>
 </html>
