@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Umalla generator</title>
-		<link rel="stylesheet" href="lijnschrift.css">
+		<link rel="stylesheet" href="umalla.css">
 	</head>
 	
 	<body onload="generate()">
@@ -21,6 +21,13 @@
 				<p>Only even numbers produce nice results.</p>
 				<input oninput="generate()" type="number" step="2" min="2" name="thickness" id="thickness" value="6">
 				
+				<h3>Writing direction</h3>
+				<input type="radio" id="horizontal" value="horizontal" checked="" name="direction" oninput="applyScaleAndRotation()">
+				<label>horizontal</label>
+				<br>
+				<input type="radio" id="vertical" value="vertical" name="direction" oninput="applyScaleAndRotation()">
+				<label>vertical</label>
+				
 				<h3>How to save</h3>
 				<p>You can save the image by right-clicking on it. After that, you can edit it a program like Photoshop or Inkscape.</p>
 				<p id="debug"></p>
@@ -31,7 +38,7 @@
 			<div class="inside">
 				<h3>Output</h3>
 				<canvas id="canvas"></canvas>
-				<script src="gen.js"></script>
+				<script src="umalla.js"></script>
 			</div>
 		</div>
 	</body>

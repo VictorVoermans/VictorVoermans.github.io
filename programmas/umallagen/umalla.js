@@ -17,21 +17,26 @@ var checkersPerColumnAmount;
 var checkerX = []; // an array of the x-coordinates of the checker squares
 var checkerY = []; // an array of the y-coordinates of the checker squares
 var cumulativeCodes = [];
+var lineColor = "black";
+var backgroundColor = "white";
 
 function generate(){
 	prepareInput();
 	prepareCanvas();
 	draw();
-	applyScale();
+	applyScaleAndRotation();
 }
 
+// this function turns uppercase letters into lowercase ones and removes all spaces and interpuntion except full stops; only letters and full stops are represented in the script.
 function prepareInput(){
 	input = document.getElementById("input").value;
 	
+	// turn uppercase letters into lowercase ones
 	for (i = 0; i < caps.length; i++){
 		input = input.replaceAll(caps[i], letters[i]);
-	} // uppercase letters become lowercase
+	}
 	
+	// remove any character from input which doesn't apprear in "letters" array
 	for (i = 0; i < input.length; i++){
 		if (letters.indexOf(input[i]) == -1){
 			input = input.replaceAll(input[i], "");
@@ -49,18 +54,23 @@ function getThickness(){
 	thickness = document.getElementById("thickness").value;
 }
 
+// this function converts a string of letters into an array of numbers, which the script uses.
 function convertInputToCode(){
+	// "ta" > "312111"
 	for (i = 0; i < letters.length; i++){
-		input = input.replaceAll(letters[i], codes[i]);		// "312111"
+		input = input.replaceAll(letters[i], codes[i]);
 	}
 	
-	input = input.split("");								// ["3","1","2","1","1","1"]
+	// 312111 > ["3","1","2","1","1","1"]
+	input = input.split("");
 	
-	for (i = 0; i < input.length; i++){						// [3,1,2,1,1,1]
+	// ["3","1","2","1","1","1"] > [3,1,2,1,1,1]
+	for (i = 0; i < input.length; i++){
 		input[i] = parseInt(input[i]);
 	}
 }
 
+// this function calculates the sum of the numbers that make up a code, so 312111 > 3+1+2+1+1+1 = 9. this is needed for calculating the length
 function calculateSum(){
 	sum = 0;
 	
@@ -83,7 +93,7 @@ function setCanvasWidth(){
 
 function draw(){
 	drawBackground();
-	context.fillStyle = "white";
+	context.fillStyle = lineColor;
 	drawHorizontalLines();
 	drawVerticalEnds();
 	generateCheckerPattern();
@@ -93,16 +103,18 @@ function draw(){
 }
 
 function drawBackground(){
-	context.fillStyle = "red";
+	context.fillStyle = backgroundColor;
 	context.fillRect(0,0,canvasWidth,canvasHeight);
 }
 
+// this function draws horizontal lines across the band of the script. vertical lines will break up this neat base pattern later on in the process.
 function drawHorizontalLines(){
 	for (i = 1; i < 2*(thickness+1); i+=2){
 		context.fillRect(1,i,canvasWidth-2,1);
 	}
 }
 
+// this function draws the vertical lines which appear at both ends of a block of text, to seal it off as it were.
 function drawVerticalEnds(){
 	for (i = 4; i < thickness*4; i+=4){
 		context.fillRect(1,i,1,1);
@@ -113,8 +125,9 @@ function drawVerticalEnds(){
 	} // right side
 }
 
+// this function generates two arrays, which are the x and y coordinates of the checker pattern which underlies the script
 function generateCheckerPattern(){
-	checkerColumnAmount = Math.ceil(sum/(thickness/2)); // dit gebruikt ik ook in setCanvasWidth() dus moet op een handigere plek kunnen
+	checkerColumnAmount = Math.ceil(sum/(thickness/2));
 	checkersPerColumnAmount = thickness/2;
 	
 	checkerX = []; // these arrays have to be emptied every time
@@ -128,7 +141,7 @@ function generateCheckerPattern(){
 			checkerX.push(xStart);
 		}
 		xStart += 2;
-	} // the x-coordinates of the checker squares
+	}
 	
 	for (i = 0; i < checkerColumnAmount/2; i++){
 		yStart = 2;
@@ -139,17 +152,19 @@ function generateCheckerPattern(){
 		for (j = 0; j < checkersPerColumnAmount; j++){
 			checkerY.push(yStart + (j*4));
 		}
-	} // the y-coordinates of the checker squares
+	}
 }
 
+// this function generates an array in which the numbers in the code (3,1,2,1,1,1,...) are added onto each other, so 3,4,6,7,8,9. this is needed to determin which of the underlying checkerboard squares will be used in the script
 function generateCumulativeCodes(){
 	cumulativeCodes = []; // reset the array to an empty one
 	cumulativeCodes[0] = input[0]; // set up the start
 	for (i = 1; i < input.length; i++){
 		cumulativeCodes[i] = cumulativeCodes[i-1] + input[i];
-	} // kind of similar to fibonacci
+	}
 }
 
+// this function draws the vertical lines to the left and the right of the selected checkerboard squares
 function drawVerticalLines(){
 	for (i = 0; i < cumulativeCodes.length; i++){
 		context.fillRect(checkerX[cumulativeCodes[i]-1]-1,checkerY[cumulativeCodes[i]-1],1,1); // the line to the left
@@ -157,14 +172,22 @@ function drawVerticalLines(){
 	}
 }
 
+// this function erases (draws with backgroundcolor) the horizontal lines above and below the selected checkerboard squares
 function eraseHorizontalLines(){
-	context.fillStyle = "red";
+	context.fillStyle = backgroundColor;
 	for (i = 0; i < cumulativeCodes.length; i++){
 		context.fillRect(checkerX[cumulativeCodes[i]-1],checkerY[cumulativeCodes[i]-1]+1,1,1); // the line above
 		context.fillRect(checkerX[cumulativeCodes[i]-1],checkerY[cumulativeCodes[i]-1]-1,1,1); // the line below
 	}
 }
 
-function applyScale(){
-	canvas.style.transform = "scale(2) translate(" + canvasWidth/4 + "px," + canvasHeight/4 + "px)";
+function applyScaleAndRotation(){
+	var horizontal = document.getElementById("horizontal");
+	var vertical = document.getElementById("vertical");
+	
+	if (horizontal.checked == true){
+		canvas.style.transform = "scale(2) rotate(0deg) translate(" + canvasWidth/4 + "px," + canvasHeight/4 + "px)";
+	} else {
+		canvas.style.transform = "scale(2) rotate(90deg) translate(" + (canvasWidth/2-4) + "px," + ((canvasWidth/2 - canvasHeight)/2) + "px)";
+	}
 }
