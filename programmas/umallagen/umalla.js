@@ -17,8 +17,8 @@ var checkersPerColumnAmount;
 var checkerX = []; // an array of the x-coordinates of the checker squares
 var checkerY = []; // an array of the y-coordinates of the checker squares
 var cumulativeCodes = [];
-var lineColor = "black";
-var backgroundColor = "white";
+var lineColor = "white";
+var backgroundColor = "red";
 
 function generate(){
 	prepareInput();
