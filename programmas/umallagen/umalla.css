@@ -42,3 +42,9 @@ canvas {
 	image-rendering: pixelated;
 	image-rendering: crisp-edges;
 }
+
+#debug {
+	font-family: monospace;
+	color: red;
+	font-size: 120%;
+}

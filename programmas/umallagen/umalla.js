@@ -185,11 +185,11 @@ function applyScaleAndRotation(){
 	var horizontal = document.getElementById("horizontal");
 	var vertical = document.getElementById("vertical");
 	
-	var scale = 2;
+	var scale = document.getElementById("scale").value;
 	
 	if (horizontal.checked == true){
-		canvas.style.transform = "scale(" + scale + ") rotate(0deg) translate(" + canvasWidth/4 + "px," + canvasHeight/4 + "px)";
+		canvas.style.transform = "scale(" + scale + ") rotate(0deg) translate(" + (canvasWidth-(canvasWidth/scale))/2 + "px," + (canvasHeight-(canvasHeight/scale))/2 + "px)";
 	} else {
-		canvas.style.transform = "scale(" + scale + ") rotate(90deg) translate(" + (canvasWidth/2-(canvasHeight/4)) + "px," + ((canvasWidth/2 - canvasHeight)/2) + "px)";
+		canvas.style.transform = "scale(" + scale + ") rotate(90deg) translate(" + (canvasWidth-(canvasHeight/scale))/2 + "px," + ((canvasWidth/scale)-canvasHeight)/2 + "px)";
 	}
 }
